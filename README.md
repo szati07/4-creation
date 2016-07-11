@@ -1,2 +1,3 @@
 # 4-creation
-4C
+Frou Creation Static Website
+
