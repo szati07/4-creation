@@ -1,3 +1,6 @@
+alert('sds');
+
+
 var slideLogoRight = function() {
 
 	// logo képméretének csökkentése
