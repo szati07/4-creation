@@ -1,35 +1,35 @@
-alert('sds');
+var $header = $('header');
+var $logo = $('#logo');
+var $nav = $('nav');
+var $welcome = $('.welcome');
+var $contentContainer = $('.content-container');
+var $scrollDownArrow = $('.scroll-down-arrow');
 
-
-var slideLogoRight = function() {
-
-	// logo képméretének csökkentése
-	$('#logo').animate({
-		'margin-left': '0.75em',
-		backgroundSize: 80,
-			'width': '80px',
-			'height': '80px'
-	}, 400, function() {
-
-	});
-
-	$('#logo-container h1').animate({
-			'margin-top': '1em'
-		}, 500, function() {
-	
-	});
-	
-	$('header').animate({
-		'height': 160
-	}, 500, function() {
-
-	});
-
+var removeHeaderAnimationClasses = function() {
+	$header.removeClass('opened');
+	$logo.removeClass('opened');
+	$nav.removeClass('opened');
+	$welcome.removeClass('opened');
+	$contentContainer.removeClass('opened');
+	$scrollDownArrow.removeClass('opened');
 }
 
-// Scroll Event
+var addHeaderAnimationClasses = function() {
+	$header.addClass('opened');
+	$logo.addClass('opened');
+	$nav.addClass('opened');
+	$welcome.addClass('opened');
+	$contentContainer.addClass('opened');
+	$scrollDownArrow.addClass('opened');	
+}
+
+$scrollDownArrow.on('click', removeHeaderAnimationClasses);
 $(window).scroll(function() {
-	if($(this).scrollTop() > 2) {
-		slideLogoRight();
+	if($(this).scrollTop() >= 1) {
+		removeHeaderAnimationClasses();
+			
+	} else if ($(this).scrollTop() == 0) {
+		addHeaderAnimationClasses();
+
 	}
 });

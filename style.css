@@ -8,6 +8,7 @@
 
 body {
 	margin: 0;
+	font-family: sans-serif;
 }
 
 a {
@@ -17,55 +18,320 @@ a {
 ul {
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+}
 
-/*
-* Header 
-*/
+/* Clearfix */
+
+.clearfix {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* ==========================
+* Home Page Header Animation
+=============================*/
+header.opened {
+	height: 500px;
+	padding: 0;
+}
+
+header.opened::after {
+  content: "";
+	background: linear-gradient(90deg, #e88418, transparent 90%),
+              	linear-gradient(90deg, #c6b19b, transparent 150%),
+              	#fff url('img/office.jpg') no-repeat center;
+    background-size: cover;
+	opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+#logo.opened {
+	display: block;
+	position: absolute;
+	left: -100px;
+}
+
+.welcome.opened {
+	opacity: 1;
+	top: 0;
+}
+
+.scroll-down-arrow.opened span {
+	display: block;
+	position: absolute;
+	height: 6px;
+	border-radius: 6px;
+	background: #333;
+	opacity: 1;
+	bottom: 15px;
+}
+
+.scroll-down-arrow.opened p {
+	opacity: 1;
+}
+
+.scroll-down-arrow.opened span:nth-child(1) {
+ 	width: 59%;
+	left: 0;
+	opacity: 1;
+	-webkit-transform: rotate(40deg);
+	-moz-transform: rotate(40deg);
+	-o-transform: rotate(40deg);
+	transform: rotate(40deg);
+}
+
+.scroll-down-arrow.opened span:nth-child(2) {
+	width: 59%;
+	opacity: 1;
+	right: 0;
+	-webkit-transform: rotate(-40deg);
+	-moz-transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+
+nav.opened {
+	top: -200px;
+	opacity: 0;
+}
+
+.content-container.opened {
+	padding-top: 500px;
+}
+
+/* ==========================
+* Header Styles
+=============================*/
 
 header {
+	position: fixed;
 	padding: 0.75em;
 	width: 100%;
+	background: linear-gradient(90deg, #e88418, transparent 70%),
+              	linear-gradient(90deg, #c6b19b, transparent 600%),
+              	#fff no-repeat center;
+   background-size: cover;
 	margin: 0;
-	height: 300px;
-	background: linear-gradient(90deg, #e88418, transparent 90%),
-              	linear-gradient(180deg, #c6b19b, transparent 50%),
-              	#fff url('img/2.png') no-repeat center;
-  	background-size: cover;
+	height: 100px;
+  	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
 }
 
-#logo-container h1 {
-	margin-top: 2em;
+header::after {
+  content: "";
+  background: linear-gradient(90deg, #e88418, transparent 70%),
+              	linear-gradient(90deg, #c6b19b, transparent 600%),
+              	#fff url('img/office.jpg') no-repeat center;
+   background-size: cover;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;  
 }
 
-#logo-container h1 a {
+.logo-container {
 	display: block;
+	position: relative;
+}
+
+
+
+.welcome {
+	width: 100%;
+	position: absolute;
+	top: -1000px;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out; 
+}
+
+.company-summary-message {
+	width: 100%;
+	padding: 1em;
+}
+
+.welcome p {
+    color: #fff;
+  
+    font-size: 1.3em;
+    font-weight: 100;
+    margin: 1em auto;
+    max-width: 1200px;
+}
+
+.welcome h1 {
+	color: #fff;
+	font-weight: 100;
+}
+
+.image-container {
+	width: 100%;
+	background: #000;
+	opacity: 0.8;
+	height: 100px;
+}
+
+.image-container img {
+	width: 90px;
+	height: 90px;
+	margin-top: 5px;
+	border-radius: 50%;
+}
+
+.scroll-down-arrow {
+	width: 60px;
+	height: 45px;
+	position: relative;
+	margin: 120px auto;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.scroll-down-arrow span {
+	display: block;
+	position: absolute;
+	height: 6px;
+	border-radius: 6px;
+	background: #333;
+	opacity: 1;
+	bottom: 15px;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.scroll-down-arrow p {
+	opacity: 0;
+	font-size: 0.6em;
+	color: #333;
+	text-align: center;
+	font-weight: 100;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.scroll-down-arrow span:nth-child(1) {
+	width: 59%;
+	left: 0;
+	opacity: 0;
+	-webkit-transform: rotate(-500deg);
+	-moz-transform: rotate(-500deg);
+	-o-transform: rotate(-500deg);
+	transform: rotate(-500deg);
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+.scroll-down-arrow span:nth-child(2) {
+	width: 59%;
+	right: 0;
+	opacity: 0;
+	-webkit-transform: rotate(500deg);
+	-moz-transform: rotate(500deg);
+	-o-transform: rotate(500deg);
+	transform: rotate(500deg);
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
 }
 
 #logo {
 	display: block;
-	width: 150px;
-	height: 150px;
+	width: 75px;
+	height: 75px;
 	background: url('img/logo.png');
-	background-size: 150px 150px;
-	margin: 0 auto;
-	width: 150px;
-	height: 150px;
 	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
 	left: 0;
-	right: 0;
+	background-size: 75px 75px;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
 }
 
+#logo:hover {
+	display: block;
+	width: 75px;
+	height: 75px;
+	background: url('img/logo2.3.png');
+	position: absolute;
+	left: 0;
+	background-size: 75px 75px;
+
+}
+
+.button-group {
+	margin: 1em auto;
+	width: 798px;
+}
+
+.button {
+	float: left;
+	display: block;
+	width: 250px;
+	height: 50px;
+	background: #8b4f0e;
+	border-radius: 3px;
+	margin-right: 1em;
+	padding: 1em;
+	color: #ededed;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	opacity: 0.8;
+}
+
+
+/* Navigation */
 nav {
-	margin-top: 18em;
-	text-align: right;
-	width: 100%;
-	background-color: #333;
-	border-radius: 0 0 10px 10px;
-	transition-duration: 0.5s;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: auto;
+	opacity: 1;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+nav ul {
+	margin-top: 25px;
 }
 
 nav ul li {
@@ -76,30 +342,59 @@ nav ul li a {
 	display: block;
 	padding: 1em;
 	color: #fff;
-	text-transform: uppercase;
 }
 
-/*
-*	Content
-*/
-
+/* Content */
 .content-container {
-	width: 100%;
-	height: 800px;
+	padding-top: 104px;
+	height: 1000px;
+	-webkit-transition: .4s ease-in-out;
+	-moz-transition: .4s ease-in-out;
+	-o-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
 }
 
-
-/*
-* Footer
-*/
-
-footer {
+.message-and-picture {
 	width: 100%;
-	height: 80px;
-	text-align: center;
+	height: 400px;
+	background: linear-gradient(180deg, #222, transparent 50%),
+				linear-gradient(0deg, #222, transparent 50%),
+              	url('img/great-office.jpg') no-repeat center;
+   background-size: cover;
+
+}
+
+.message-and-picture span {
+	display: inline-block;
+	float: right;
+	font-size: 1.5em;
+	padding: 0.75em;
+	background-color: #c6b19b;
+	border-radius: 5px;
+	margin-top: 4em;
+	margin-right: 4em;
+}
+
+.message-and-picture span a {
+	color: #333;
+}
+
+.short-description {
+	padding: 1em 0;
+	width: 100%;
 	background: #333;
-	color: #fff;
+	color: #ddd;
+	font-weight: 100;
 }
+
+.content-container > p {
+	margin-top: 0;
+}
+
+
+
+
+
 
 
 
